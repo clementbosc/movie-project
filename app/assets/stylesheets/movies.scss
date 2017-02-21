@@ -1,0 +1,192 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/********************/
+/*****   HOME   *****/
+/********************/
+
+
+.home-movie-cover{
+  width: 50%;
+  height: calc(50vw * (29.7/21));
+  float: left;
+  background-position: center center;
+  background-size: cover;
+  transition: background-size .2s;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.57);
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+}
+
+.search-input{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translate(0, -50%);
+  background: rgba(0, 0, 0, 0.50);
+  color: #fff;
+  border: none;
+  padding: 8px 10px;
+  font-size: 16px;
+  border-radius: 2px;
+  outline: none;
+}
+
+@media screen and (min-width: 450px) {
+  .home-movie-cover{
+    width: 33.3333333%;
+    height: calc(33.3333333vw * (29.7/21));
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .home-movie-cover{
+    width: 25%;
+    height: calc(25vw * (29.7/21));
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .home-movie-cover{
+    width: 20%;
+    height: calc(20vw * (29.7/21));
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .home-movie-cover{
+    width: 16.66666667%;
+    height: calc(16.66666667vw * (29.7/21));
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .home-movie-cover{
+    width: 14.2857142857%;
+    height: calc(14.2857142857vw * (29.7/21));
+  }
+}
+
+
+
+
+.show-movie .cover {
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+}
+
+.show-movie .cover-blur{
+  position: fixed;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.show-movie .poster {
+  width: 200px;
+  height: 282.857143px;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 0px 20px 0px;
+}
+
+.show-movie .side-section{
+  position: fixed;
+  top: 60px;
+  left: 5%;
+  width: 200px;
+}
+
+.show-movie .genre-item {
+  padding: 8px 10px;
+  background: #fff;
+  margin: 2px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.show-movie .genre-list{
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.show-movie .movie-infos{
+  position: absolute;
+  top: 100px;
+  width: calc(90% - 200px);
+  margin: 0 0 0 calc(5% + 200px);
+  color: #fff;
+  padding: 0 0 30px 30px;
+}
+
+
+.show-movie h1{
+  font-family: 'Oswald', serif;
+  font-size: 50px;
+  line-height: 80px;
+  margin: 10px 0 5px 0;
+}
+
+.show-movie h2.tagline{
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin: -5px 0 0 47px;
+  font-size: 20px;
+}
+
+.show-movie .overview {
+  font-family: 'Open Sans Condensed', sans-serif;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.show-movie section {
+  margin: 20px 0 30px 0;
+}
+
+.show-movie h2 {
+  font-family: 'Open Sans', serif;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+
+.show-movie .scroll-list {
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.show-movie .cast-item {
+  height: 140px;
+  width: 100px;
+  background-position: center center;
+  background-size: cover;
+  display: inline-block;
+}
+
+.show-movie .movie-item {
+  height: 200px;
+  width: 134px;
+  background-position: center center;
+  background-size: cover;
+  display: inline-block;
+}

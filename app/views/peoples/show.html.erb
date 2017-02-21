@@ -1,0 +1,17 @@
+<div class="show-movie">
+  <div class="profile-photo" style="background-image: url('https://image.tmdb.org/t/p/h632<%= @people['profile_path'] %>')"></div>
+  <div class="people-infos">
+    <h1><%= @people['name'] %></h1>
+    <p class="biography"><%= @people['biography'] %></p>
+    <section>
+      <h2>Les films dans lesquels il a joué</h2>
+      <div class="scroll-list">
+        <% @credits['cast'].each do |movie| %>
+            <a href="/movies/<%= movie['id'] %>">
+              <div class="movie-item" style="background-image: url('https://image.tmdb.org/t/p/h632<%= movie['poster_path'] %>')"></div>
+            </a>
+        <% end %>
+      </div>
+    </section>
+  </div>
+</div>

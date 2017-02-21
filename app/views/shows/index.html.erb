@@ -1,0 +1,12 @@
+<header>
+  <form action="/search">
+    <input type="text" name="query" class="search-input">
+  </form>
+  t412
+</header>
+
+<% @shows.each do |show| %>
+    <a href="/shows/<%= show['id'] %>" class="home-movie-link">
+      <div class="home-movie-cover" style="background-image: url('https://image.tmdb.org/t/p/w500<%= show['poster_path'] %>')"></div>
+    </a>
+<% end %>

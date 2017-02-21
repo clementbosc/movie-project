@@ -1,0 +1,33 @@
+// Place all the styles related to the Peoples controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-photo {
+  width: 200px;
+  height: 282.857143px;
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  background-size: cover;
+  background-position: center center;
+}
+
+h1{
+  font-family: 'Oswald', serif;
+  font-size: 50px;
+  line-height: 80px;
+  margin: 10px 0 5px 30px;
+}
+
+.people-infos {
+  position: absolute;
+  top: 60px;
+  width: calc(90% - 200px);
+  margin: 0 0 0 calc(200px + 5%);
+}
+
+.biography{
+  margin: 25px 0 20px 30px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 24px;
+}

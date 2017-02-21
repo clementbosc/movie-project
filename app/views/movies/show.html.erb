@@ -1,0 +1,42 @@
+<div class="show-movie">
+  <div class="cover" style="background-image: url('https://image.tmdb.org/t/p/original<%= @movie['backdrop_path'] %>')"></div>
+  <div class="cover-blur"></div>
+  <div class="side-section">
+    <div class="poster" style="background-image: url('https://image.tmdb.org/t/p/w500<%= @movie['poster_path'] %>')"></div>
+    <ul class="genre-list">
+      <% @movie['genres'].each do |genre| %>
+        <li class="genre-item"><%= genre['name'] %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="movie-infos">
+    <h1><%= @movie['title'] %></h1>
+
+    <section>
+      <h2>Synopsis</h2>
+      <p class="overview"><%= @movie['overview'] %></p>
+    </section>
+
+    <section>
+      <h2>Casting</h2>
+      <div class="scroll-list">
+        <% @cast.each do |people| %>
+            <a href="/peoples/<%= people['id'] %>">
+              <div class="cast-item" style="background-image: url('https://image.tmdb.org/t/p/h632<%= people['profile_path'] %>')"></div>
+            </a>
+        <% end %>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recommandations</h2>
+      <div class="scroll-list">
+        <% @reco.each do |reco| %>
+            <a href="/movies/<%= reco['id'] %>">
+              <div class="movie-item" style="background-image: url('https://image.tmdb.org/t/p/w500/<%= reco['poster_path'] %>')"></div>
+            </a>
+        <% end %>
+      </div>
+    </section>
+  </div>
+</div>

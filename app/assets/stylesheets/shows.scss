@@ -1,0 +1,77 @@
+// Place all the styles related to the Shows controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.season-cover {
+  width: 150px;
+  height: calc(150px * (29.7/21));
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  border-radius: 2px;
+}
+
+.season-title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.seasons-list {
+  margin: 0 0 20px 30px;
+  width: 100%;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.season-item {
+  display: inline-block;
+}
+
+.episodes-list {
+  margin: 0 0 20px 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.episode-item {
+  margin: 2px;
+  width: calc(33.3333% - 4px);
+}
+
+.episode-cover{
+  width: 100%;
+  height: calc((((90vw - 230px)/3) - 4px) * (2.81/5));
+  background-size: cover;
+  background-position: center center;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+}
+
+
+.episode-title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 300;
+}
+.episode-overview {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}

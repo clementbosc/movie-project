@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  release_date: 2017-02-20
+  overview: MyText
+  budget: MyString
+  homepage: MyString
+  original_language: MyString
+  original_title: MyString
+  popularity: 1.5
+  revenue: MyString
+  status: MyString
+  tagline: MyString
+  backdrop_path: MyString
+  poster_path: MyString
+
+two:
+  title: MyString
+  release_date: 2017-02-20
+  overview: MyText
+  budget: MyString
+  homepage: MyString
+  original_language: MyString
+  original_title: MyString
+  popularity: 1.5
+  revenue: MyString
+  status: MyString
+  tagline: MyString
+  backdrop_path: MyString
+  poster_path: MyString
