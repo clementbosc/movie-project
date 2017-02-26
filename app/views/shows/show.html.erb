@@ -1,16 +1,26 @@
-<div class="cover" style="background-image: url('https://image.tmdb.org/t/p/original<%= @show['backdrop_path'] %>')"></div>
-<div class="cover-blur"></div>
-<div class="poster" style="background-image: url('https://image.tmdb.org/t/p/w500<%= @show['poster_path'] %>')"></div>
-<div class="movie-infos">
-  <h1><%= @show['name'] %></h1>
-  <p class="overview"><%= @show['overview'] %></p>
-  <div class="seasons-list">
-    <% @show['seasons'].each do |season| %>
-      <a href="/seasons/<%= season['id'] %>" class="season-item">
-        <div class="season-cover" style="background-image: url('https://image.tmdb.org/t/p/w500<%= season['poster_path'] %>')">
-          <div class="season-title">Saison <%= season['season_number'] %></div>
-        </div>
-      </a>
-    <% end %>
+<div class="content show-content">
+  <div class="cover" style="background-image: url('https://image.tmdb.org/t/p/original<%= @show['backdrop_path'] %>')"></div>
+  <div class="cover-blur"></div>
+  <div class="side-section">
+    <div class="poster" style="background-image: url('https://image.tmdb.org/t/p/w500<%= @show['poster_path'] %>')"></div>
+  </div>
+  <div class="show-infos">
+    <h1><%= @show['name'] %></h1>
+    <section>
+      <h2>Synopsis</h2>
+      <p class="overview"><%= @show['overview'] %></p>
+    </section>
+    <section>
+      <h2>Saisons</h2>
+      <div class="scroll-list">
+        <% @show['seasons'].each do |season| %>
+            <a href="/seasons/<%= season['id'] %>" class="season-item">
+              <div class="season-cover" style="background-image: url('https://image.tmdb.org/t/p/w500<%= season['poster_path'] %>')">
+                <div class="season-title">Saison <%= season['season_number'] %></div>
+              </div>
+            </a>
+        <% end %>
+      </div>
+    </section>
   </div>
 </div>

@@ -16,18 +16,7 @@
   transition: background-size .2s;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background: rgba(0, 0, 0, 0.57);
-  text-align: center;
-  line-height: 60px;
-  color: #fff;
-  font-family: "Oswald", sans-serif;
-  font-size: 30px;
-}
+
 
 .search-input{
   position: absolute;
@@ -78,7 +67,9 @@ header {
   }
 }
 
-
+.content.show-movie {
+  padding-top: 60px;
+}
 
 
 .show-movie .cover {
@@ -87,6 +78,9 @@ header {
   background-size: cover;
   position: fixed;
   width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .show-movie .cover-blur{
@@ -94,6 +88,9 @@ header {
   width:100%;
   height:100%;
   background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .show-movie .poster {
@@ -105,10 +102,21 @@ header {
 }
 
 .show-movie .side-section{
-  position: fixed;
-  top: 60px;
+  position: absolute;
+  top: 120px;
   left: 5%;
   width: 200px;
+}
+
+.show-movie .side-section.fixed{
+  position: fixed;
+  top: 50px;
+}
+
+.show-movie .side-section.bottom {
+  position: absolute;
+  bottom: 400px;
+  top: inherit;
 }
 
 .show-movie .genre-item {
@@ -127,8 +135,6 @@ header {
 
 
 .show-movie .movie-infos{
-  position: absolute;
-  top: 100px;
   width: calc(90% - 200px);
   margin: 0 0 0 calc(5% + 200px);
   color: #fff;

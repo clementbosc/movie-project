@@ -1,21 +1,20 @@
-<div class="home">
+<div class="content home-content">
+  <div class="cover" style="background-image: url('<%= @cover %>')"></div>
+  <div class="cover-blur"></div>
   <section>
     <h2>Films actuellement au cinéma</h2>
-    <div class="scroll-list">
+    <div class="mosaic-container">
       <% @movies.each do |movie| %>
-          <a href="/movies/<%= movie['id'] %>">
-            <div class="movie-item" style="background-image: url('https://image.tmdb.org/t/p/w500/<%= movie['poster_path'] %>')"></div>
-          </a>
+          <a href="/movies/<%= movie['id'] %>" class="movie-item" style="background-image: url('https://image.tmdb.org/t/p/w500<%= movie['poster_path'] %>')"></a>
       <% end %>
     </div>
   </section>
 
   <section>
-    <h2>Série en cours de diffusion</h2>
-    <div class="scroll-list">
+    <h2>Séries en cours de diffusion</h2>
+    <div class="mosaic-container">
       <% @shows.each do |show| %>
-          <a href="shows/<%= show['id'] %>">
-            <div class="movie-item" style="background-image: url('https://image.tmdb.org/t/p/w500/<%= show['poster_path'] %>')"></div>
+          <a href="shows/<%= show['id'] %>" style="background-image: url('https://image.tmdb.org/t/p/w500<%= show['poster_path'] %>')" class="movie-item">
           </a>
       <% end %>
     </div>

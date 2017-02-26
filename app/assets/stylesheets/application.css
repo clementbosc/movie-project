@@ -49,6 +49,8 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
     font-family: "Open Sans", sans-serif;
+    background-color: #fafafa;
+    height: 100%;
 }
 ol, ul {
     list-style: none;
@@ -68,6 +70,11 @@ table {
 a{
     text-decoration: none;
     color: inherit;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -96,4 +103,58 @@ button {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.57);
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    z-index:2;
+    position: relative;
+}
+
+footer{
+    height:400px;
+    background: rgba(0, 0, 0, 0.57);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.container{
+    min-height: 100%;
+    position: relative;
+}
+
+.content{
+    padding-bottom: 400px!important;
+}
+
+.logo-container{
+    height:60px;
+    width:150px;
+    background: #a5a5a5;
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+}
+
+.header-user-section{
+    position: absolute;
+    right:0;
+    line-height: 70px;
+    padding-right: 20px;
+    font-size: 20px;
+    display: flex;
+}
+
+.logo-container:after{
+    content: 'LOGO';
 }

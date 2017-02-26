@@ -2,11 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$poster_ratio: 1.4142857143;
+$nb_poster_row: 8;
 
-.movie-item{
-  height: 200px;
-  width: 134px;
+.home-content {
+  padding: 400px 10% 0;
+}
+
+.home-content section {
+  margin-bottom: 50px;
+}
+
+.home-content h2 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 40px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.home-content .mosaic-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home-content .movie-item{
+  height: calc(80vw/#{$nb_poster_row} * #{$poster_ratio});
+  width: calc(80vw/#{$nb_poster_row});
   background-position: center center;
   background-size: cover;
-  display: inline-block;
+}
+
+.home-content .cover {
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.home-content .cover-blur{
+  position: fixed;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
