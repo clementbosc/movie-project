@@ -12,19 +12,23 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: movie-project
+  database: movie-project-dev
   pool: 5
-  username: clementbosc
-  password: coucou
+  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-#test:
-#  <<: *default
-#  database: db/test.sqlite3
-#
-#production:
-#  <<: *default
-#  database: db/production.sqlite3
-#
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: movie-project-test
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: movie-project-prod
+  pool: 5
+  timeout: 5000
