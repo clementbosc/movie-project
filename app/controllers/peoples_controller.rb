@@ -25,10 +25,9 @@ class PeoplesController < ApplicationController
     @credits = JSON.parse(buffer)
 
     @movies_played = @credits['cast']
-    @movies_played.delete_if { |h| Date.parse(h['release_date']) > Date.today }
+    @movies_played.delete_if { |h| h['release_date'].nil? || Date.parse(h['release_date']) > Date.today }
     @movies_played.sort_by! { |h| h['release_date'] }
     @movies_played.reverse!
-
   end
 
 end
