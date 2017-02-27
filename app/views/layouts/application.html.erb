@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>MovieProject</title>
     <%= csrf_meta_tags %>
 
@@ -9,28 +9,31 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700|Open+Sans+Condensed:300|Oswald" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  </head>
+</head>
 
-  <body>
-    <div class="container">
-      <!--<p class="notice"><%= notice %></p>
+<body>
+<div class="container">
+    <!--<p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>-->
-      <header>
+    <header>
+        <form action="/search" method="get">
+            <input type="text" name="query" class="search-input" placeholder="Search">
+        </form>
         <a class="logo-container" href="/"></a>
         <div class="header-user-section">
-          <% if user_signed_in? then %>
-              <%= link_to current_user.email, current_user %>
-              <%= link_to "Log out", :destroy_user_session, method: :delete %>
-          <% else %>
-              <%= link_to "Sign In", :new_user_session %>
-              <%= link_to "Sign Up", :new_user_registration %>
-          <% end %>
+            <% if user_signed_in? %>
+                <%= link_to current_user.email, current_user %>
+                <%= link_to "Log out", :destroy_user_session, method: :delete %>
+            <% else %>
+                <%= link_to "Sign In", :new_user_session %>
+                <%= link_to "Sign Up", :new_user_registration %>
+            <% end %>
         </div>
-      </header>
-      <%= yield %>
-      <footer>
+    </header>
+    <%= yield %>
+    <footer>
 
-      </footer>
-    </div>
-  </body>
+    </footer>
+</div>
+</body>
 </html>

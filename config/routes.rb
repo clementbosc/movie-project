@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :peoples
   resources :users
 
+  get '/search', to: 'search#search'
   get '/shows/:show/season/:season', to: 'seasons#show'
 
   root 'welcome#index'

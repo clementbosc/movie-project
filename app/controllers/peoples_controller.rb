@@ -23,6 +23,12 @@ class PeoplesController < ApplicationController
 
     buffer = open('https://api.themoviedb.org/3/person/'+params[:id]+'/movie_credits?api_key='+api_key).read
     @credits = JSON.parse(buffer)
+
+    @movies_played = @credits['cast']
+    @movies_played.delete_if { |h| Date.parse(h['release_date']) > Date.today }
+    @movies_played.sort_by! { |h| h['release_date'] }
+    @movies_played.reverse!
+
   end
 
 end

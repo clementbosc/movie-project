@@ -247,3 +247,11 @@ section.show-section {
     height: 200px;
     width: 134px;
 }
+
+
+input.search-input {
+    position: absolute;
+    left: 15px;
+    height: 30px;
+    top: 15px;
+}
