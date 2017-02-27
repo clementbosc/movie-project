@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 70) {
+        $('.show-side-section').addClass('fixed');
+    } else {
+        $('.show-side-section').removeClass('fixed');
+    }
+});

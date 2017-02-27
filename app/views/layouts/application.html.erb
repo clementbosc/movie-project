@@ -19,7 +19,7 @@
         <a class="logo-container" href="/"></a>
         <div class="header-user-section">
           <% if user_signed_in? then %>
-              <div><%= current_user.email %></div>
+              <%= link_to current_user.email, current_user %>
               <%= link_to "Log out", :destroy_user_session, method: :delete %>
           <% else %>
               <%= link_to "Sign In", :new_user_session %>

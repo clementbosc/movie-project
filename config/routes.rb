@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :movies
   resources :shows
+  resources :seasons
+  resources :episodes
   resources :peoples
+  resources :users
+
+  get '/shows/:show/season/:season', to: 'seasons#show'
 
   root 'welcome#index'
 
