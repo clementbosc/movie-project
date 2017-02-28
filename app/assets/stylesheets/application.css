@@ -248,6 +248,11 @@ section.show-section {
     width: 134px;
 }
 
+.scroll-list-item_backdrop_s1{
+    height: 140.5px;
+    width: 250px;
+}
+
 
 input.search-input {
     position: absolute;
@@ -260,4 +265,19 @@ input.search-input {
     font-size: 18px;
     padding: 0 7px;
     border-radius: 2px;
+}
+
+input.search-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #000;
+}
+input.search-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #000;
+    opacity:  1;
+}
+input.search-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #000;
+    opacity:  1;
+}
+input.search-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #000;
 }

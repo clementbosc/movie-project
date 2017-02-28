@@ -1,0 +1,19 @@
+<div class="content show-content">
+
+    <div class="bg-cover" style="background-image: url('https://image.tmdb.org/t/p/original<%= @episode['still_path'] %>')"></div>
+    <div class="cover-blur"></div>
+
+    <div class="show-side-section">
+        <div class="show-poster" style="background-image: url('https://image.tmdb.org/t/p/w500<%= @show['poster_path'] %>')"></div>
+    </div>
+
+    <div class="show-main-section">
+        <h1 class="show-h1">
+            <a href="/shows/<%= @show['id'] %>"><%= @show['name'] %></a>
+            <span> - </span>
+            <a href="/shows/<%= @show['id'] %>/season/<%= @season['season_number'] %>"><%= @season['name'] %></a>
+            <span> - Épisode <%= @episode['episode_number'] %> (<%= @episode['name'] %>)</span>
+        </h1>
+
+    </div>
+</div>

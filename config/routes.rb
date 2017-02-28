@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/search', to: 'search#search'
   get '/shows/:show/season/:season', to: 'seasons#show'
+  get '/shows/:show/season/:season/episode/:episode', to: 'episodes#show'
 
   root 'welcome#index'
 

@@ -17,13 +17,14 @@
 
     <div class="show-main-section">
         <h1 class="show-h1"><%= @movie['title'] %></h1>
+        <div class="release-date">Sortie le <%= @release_date.strftime('%d %B %Y') %></div>
 
         <section class="show-section">
             <h2 class="show-h2">Synopsis</h2>
             <p class="plain-text"><%= @movie['overview'] %></p>
         </section>
 
-        <section>
+        <section class="show-section">
             <h2 class="show-h2">Tête d'affiche</h2>
             <div class="scroll-list">
                 <% @cast['cast'][0..4].each do |people| %>
@@ -34,7 +35,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="show-section">
             <h2 class="show-h2">Recommandations</h2>
             <div class="scroll-list">
                 <% @reco.each do |reco| %>

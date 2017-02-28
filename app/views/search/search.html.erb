@@ -1,15 +1,23 @@
 <div class="content search-content">
-    <div class="results-container">
-        <% @results.each do |item| %>
-            <% case item['media_type'] %>
-            <% when 'tv' %>
-                <a href="/shows/<%= item['id'] %>" class="result-item" style="background-image: url('https://image.tmdb.org/t/p/w500<%= item['poster_path'] %>');"><%= item['name'] %></a>
-            <% when 'person' %>
-                <a href="/peoples/<%= item['id'] %>" class="result-item" style="background-image: url('https://image.tmdb.org/t/p/h632<%= item['profile_path'] %>');"><%= item['name'] %></a>
-            <% when 'movie' %>
-                <a href="/movies/<%= item['id'] %>" class="result-item" style="background-image: url('https://image.tmdb.org/t/p/w500<%= item['poster_path'] %>');"><%= item['title'] %></a>
-            <% else %>
-            <% end %>
+
+    <div class="bg-cover" style="background-image: url('<%= @cover %>')"></div>
+    <div class="cover-blur"></div>
+
+    <% @results.each do |type| %>
+        <% if type['results'].length > 0 %>
+            <section class="search-section">
+                <h2 class="search-section-title"><%= type['section_title'] %></h2>
+                <div class="results-container">
+                    <% type['results'].each do |item| %>
+                        <a href="/<%= type['link_path'] %>/<%= item['id'] %>"
+                           class="result-item"
+                           style="background-image: url('<%= type['poster_link']+item[type['poster_name']] %>');">
+                            <%= item['name'] %>
+                        </a>
+                    <% end  %>
+                </div>
+            </section>
         <% end  %>
-    </div>
+    <% end  %>
 </div>
+
