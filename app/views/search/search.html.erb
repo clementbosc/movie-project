@@ -4,7 +4,7 @@
             <% case item['media_type'] %>
             <% when 'tv' %>
                 <a href="/shows/<%= item['id'] %>"><%= item['name'] %></a>
-            <% when 'people' %>
+            <% when 'person' %>
                 <a href="/peoples/<%= item['id'] %>"><%= item['name'] %></a>
             <% when 'movie' %>
                 <a href="/movies/<%= item['id'] %>"><%= item['title'] %></a>
