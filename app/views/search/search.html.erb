@@ -1,15 +1,15 @@
-<div class="content">
-    <% @results.each do |item| %>
-        <div class="result-item">
+<div class="content search-content">
+    <div class="results-container">
+        <% @results.each do |item| %>
             <% case item['media_type'] %>
             <% when 'tv' %>
-                <a href="/shows/<%= item['id'] %>"><%= item['name'] %></a>
+                <a href="/shows/<%= item['id'] %>" class="result-item" style="background-image: url('https://image.tmdb.org/t/p/w500<%= item['poster_path'] %>');"><%= item['name'] %></a>
             <% when 'person' %>
-                <a href="/peoples/<%= item['id'] %>"><%= item['name'] %></a>
+                <a href="/peoples/<%= item['id'] %>" class="result-item" style="background-image: url('https://image.tmdb.org/t/p/h632<%= item['profile_path'] %>');"><%= item['name'] %></a>
             <% when 'movie' %>
-                <a href="/movies/<%= item['id'] %>"><%= item['title'] %></a>
+                <a href="/movies/<%= item['id'] %>" class="result-item" style="background-image: url('https://image.tmdb.org/t/p/w500<%= item['poster_path'] %>');"><%= item['title'] %></a>
             <% else %>
             <% end %>
-        </div>
-    <% end  %>
+        <% end  %>
+    </div>
 </div>
