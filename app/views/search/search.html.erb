@@ -9,7 +9,7 @@
                 <h2 class="search-section-title"><%= type['section_title'] %></h2>
                 <div class="results-container">
                     <% type['results'].each do |item| %>
-                        <a href="/<%= type['link_path'] %>/<%= item['id'] %>"
+                        <a href="/<%= type['link_path'] %>/<%= item['id'] %>-<%= item['title'].nil? ? (get_alias item['name']) : (get_alias item['title'])  %>"
                            class="result-item"
                            style="background-image: url('<%= type['poster_link']+item[type['poster_name']] %>');">
                             <%= item['name'] %>

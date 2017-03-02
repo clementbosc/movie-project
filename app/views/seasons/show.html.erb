@@ -24,7 +24,7 @@
 
             <div class="list-episode-container">
                 <% @season['episodes'].each do |episode| %>
-                    <a href="/shows/<%= @show['id'] %>/season/<%= @season['season_number'] %>/episode/<%= episode['episode_number'] %>"
+                    <a href="/shows/<%= @show['id'] %>-<%= get_alias @show['name'] %>/season/<%= @season['season_number'] %>/episode/<%= episode['episode_number'] %>"
                        class="scroll-list-item scroll-list-item_backdrop_s1"
                        style="background-image: url('https://image.tmdb.org/t/p/w500<%= episode['still_path'] %>')">
                             <div class="episode-title"><%= episode['name'] %></div>

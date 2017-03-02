@@ -14,7 +14,7 @@
             <% @directors.each do |director| %>
                 <div class="show-side-people-item">
                     <div class="show-side-people-img" style="background-image: url('https://image.tmdb.org/t/p/h632<%= director['profile_path'] %>')"></div>
-                    <a href="/peoples/<%= director['id'] %>" class="show-side-people-name"><%= director['name'] %></a>
+                    <a href="/peoples/<%= director['id'] %>-<%= get_alias director['name'] %>" class="show-side-people-name"><%= director['name'] %></a>
                 </div>
             <% end %>
         </div>
@@ -33,7 +33,7 @@
             <h2 class="show-h2">Tête d'affiche</h2>
             <div class="scroll-list">
                 <% @cast['cast'][0..4].each do |people| %>
-                    <a href="/peoples/<%= people['id'] %>">
+                    <a href="/peoples/<%= people['id'] %>-<%= get_alias people['name'] %>">
                         <div class="cast-item" style="background-image: url('https://image.tmdb.org/t/p/h632<%= people['profile_path'] %>')"></div>
                     </a>
                 <% end %>
@@ -44,7 +44,7 @@
             <h2 class="show-h2">Recommandations</h2>
             <div class="scroll-list">
                 <% @reco.each do |reco| %>
-                    <a href="/movies/<%= reco['id'] %>">
+                    <a href="/movies/<%= reco['id'] %>-<%= get_alias reco['title'] %>">
                         <div class="movie-item" style="background-image: url('https://image.tmdb.org/t/p/w500/<%= reco['poster_path'] %>')"></div>
                     </a>
                 <% end %>

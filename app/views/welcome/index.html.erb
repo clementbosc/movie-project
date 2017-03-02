@@ -5,7 +5,7 @@
     <h2>Films actuellement au cinéma</h2>
     <div class="mosaic-container">
       <% @movies.each do |movie| %>
-          <a href="/movies/<%= movie['id'] %>" class="movie-item" style="background-image: url('https://image.tmdb.org/t/p/w500<%= movie['poster_path'] %>')"></a>
+          <a href="/movies/<%= movie['id'] %>-<%= get_alias movie['title'] %>" class="movie-item" style="background-image: url('https://image.tmdb.org/t/p/w500<%= movie['poster_path'] %>')"></a>
       <% end %>
     </div>
   </section>
@@ -14,7 +14,7 @@
     <h2>Séries en cours de diffusion</h2>
     <div class="mosaic-container">
       <% @shows.each do |show| %>
-          <a href="shows/<%= show['id'] %>" style="background-image: url('https://image.tmdb.org/t/p/w500<%= show['poster_path'] %>')" class="movie-item">
+          <a href="shows/<%= show['id'] %>-<%= get_alias show['name'] %>" style="background-image: url('https://image.tmdb.org/t/p/w500<%= show['poster_path'] %>')" class="movie-item">
           </a>
       <% end %>
     </div>

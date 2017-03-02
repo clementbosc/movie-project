@@ -22,4 +22,10 @@ $(window).scroll(function () {
     } else {
         $('.show-side-section').removeClass('fixed');
     }
+    if ($(window).scrollTop() > $('.container').height()-455-$('.show-side-section').height()){
+        $('.show-side-section').addClass('bottom');
+        $('.show-side-section').removeClass('fixed');
+    }else{
+        $('.show-side-section').removeClass('bottom');
+    }
 });

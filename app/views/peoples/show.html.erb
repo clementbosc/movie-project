@@ -18,7 +18,7 @@
             <h2 class="show-h2">Les films dans lesquels il a joué</h2>
             <div class="scroll-list">
                 <% @movies_played.each do |movie| %>
-                    <a href="/movies/<%= movie['id'] %>">
+                    <a href="/movies/<%= movie['id'] %>-<%= get_alias movie['title'] %>">
                         <div class="scroll-list-item scroll-list-item_s1" style="background-image: url('https://image.tmdb.org/t/p/h632<%= movie['poster_path'] %>')"></div>
                     </a>
                 <% end %>

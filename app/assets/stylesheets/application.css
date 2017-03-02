@@ -175,6 +175,10 @@ footer{
     position: fixed;
     top: 50px;
 }
+.show-side-section.bottom {
+    bottom: 405px;
+    top: inherit;
+}
 
 .show-main-section{
     width: calc(90% - 200px);

@@ -10,7 +10,7 @@ class WelcomeController < ApplicationController
     buffer = open("https://api.themoviedb.org/3/tv/on_the_air?api_key="+api_key+"&language="+language).read
     @shows = JSON.parse(buffer)['results']
 
-    num = rand(0..19);
+    num = rand(0..19)
     buffer = open("https://api.themoviedb.org/3/discover/movie?api_key="+api_key+"&language="+language+"&sort_by=popularity.desc&include_adult=false&include_video=false&page=1").read
     @cover = "https://image.tmdb.org/t/p/original"+JSON.parse(buffer)['results'][num]['backdrop_path'];
 
