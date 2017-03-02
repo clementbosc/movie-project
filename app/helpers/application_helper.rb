@@ -3,7 +3,7 @@ module ApplicationHelper
     def get_alias(string)
         res = string.downcase
         res = res.gsub ' ', '-'
-        res = res.gsub(/[':;,]/, '')
+        res = res.gsub(/[':;,.]/, '')
         res = res.gsub 'À', 'a'
         res = res.gsub 'Á', 'a'
         res = res.gsub 'Â', 'a'
