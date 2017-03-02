@@ -13,7 +13,7 @@
             <div class="side-section-title">Réalisateur</div>
             <% @directors.each do |director| %>
                 <div class="show-side-people-item">
-                    <div class="show-side-people-img" style="background-image: url('https://image.tmdb.org/t/p/h632<%= director['profile_path'] %>')"></div>
+                    <div class="show-side-people-img" style="background-image: url('<%= director['profile_path'].nil? ? '/empty-avatar.png' : 'https://image.tmdb.org/t/p/h632'+director['profile_path'] %>')"></div>
                     <a href="/peoples/<%= director['id'] %>-<%= get_alias director['name'] %>" class="show-side-people-name"><%= director['name'] %></a>
                 </div>
             <% end %>
@@ -31,7 +31,7 @@
 
         <section class="show-section">
             <h2 class="show-h2">Tête d'affiche</h2>
-            <div class="scroll-list">
+            <div class="scroll-list mCustomScrollbar" data-mcs-theme="minimal-dark" data-mcs-axis="x">
                 <% @cast['cast'][0..4].each do |people| %>
                     <a href="/peoples/<%= people['id'] %>-<%= get_alias people['name'] %>">
                         <div class="cast-item" style="background-image: url('https://image.tmdb.org/t/p/h632<%= people['profile_path'] %>')"></div>
@@ -42,7 +42,7 @@
 
         <section class="show-section">
             <h2 class="show-h2">Recommandations</h2>
-            <div class="scroll-list">
+            <div class="scroll-list mCustomScrollbar" data-mcs-theme="minimal-dark" data-mcs-axis="x">
                 <% @reco.each do |reco| %>
                     <a href="/movies/<%= reco['id'] %>-<%= get_alias reco['title'] %>">
                         <div class="movie-item" style="background-image: url('https://image.tmdb.org/t/p/w500/<%= reco['poster_path'] %>')"></div>

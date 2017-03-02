@@ -18,7 +18,7 @@
         <section class="show-section">
             <h2 class="show-h2">Saisons</h2>
 
-            <div class="scroll-list">
+            <div class="scroll-list mCustomScrollbar" data-mcs-theme="minimal-dark" data-mcs-axis="x">
                 <% @show['seasons'].each do |season| %>
                     <a href="/shows/<%= @show['id'] %>-<%= get_alias @show['name'] %>/season/<%= season['season_number'] %>" class="season-item">
                         <div class="season-cover" style="background-image: url('https://image.tmdb.org/t/p/w500<%= season['poster_path'] %>')">
