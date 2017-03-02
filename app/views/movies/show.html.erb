@@ -1,6 +1,7 @@
 <div class="content show-movie show-content">
     <div class="bg-cover" style="background-image: url('https://image.tmdb.org/t/p/original<%= @movie['backdrop_path'] %>')"></div>
     <div class="cover-blur"></div>
+
     <div class="show-side-section">
         <div class="show-poster" style="background-image: url('https://image.tmdb.org/t/p/w500<%= @movie['poster_path'] %>')"></div>
         <ul class="genre-list">
@@ -8,9 +9,13 @@
                 <li class="genre-item"><%= genre['name'] %></li>
             <% end %>
         </ul>
-        <div>Réalisateur :
+        <div class="side-section-container">
+            <div class="side-section-title">Réalisateur</div>
             <% @directors.each do |director| %>
-                <a href="/peoples/<%= director['id'] %>"><%= director['name'] %></a>
+                <div class="show-side-people-item">
+                    <div class="show-side-people-img" style="background-image: url('https://image.tmdb.org/t/p/h632<%= director['profile_path'] %>')"></div>
+                    <a href="/peoples/<%= director['id'] %>" class="show-side-people-name"><%= director['name'] %></a>
+                </div>
             <% end %>
         </div>
     </div>

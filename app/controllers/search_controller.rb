@@ -18,12 +18,12 @@ class SearchController < ApplicationController
             end
         end
 
-        movies.delete_if { |h| h['poster_path'].nil? }
+        movies.delete_if { |h| h['poster_path'].nil? || h['backdrop_path'].nil? }
         movies.sort_by! { |h| h['popularity'] }
         movies.reverse!
 
         tvshows.sort_by! { |h| h['popularity'] }
-        tvshows.delete_if { |h| h['poster_path'].nil? }
+        tvshows.delete_if { |h| h['poster_path'].nil? || h['backdrop_path'].nil? }
         tvshows.reverse!
 
         persons.delete_if { |h| h['profile_path'].nil? }
